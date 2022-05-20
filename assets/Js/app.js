@@ -1,13 +1,8 @@
 /*1 Ededlerden ibaret bir array verilir.
  Hemin arrayi boyukden ededden kiciye  dogru sort elemek.*/
-function Sort(){
-let arrnumbers=[5,2,8,16,9];
-arrnumbers.sort(function(a,b){
-    return a-b;
-})
-arrnumbers.reverse();
-console.log(arrnumbers);
-
+ let numbers=[5,2,8,16,9];
+ function Sort(){
+console.log(numbers.sort(function(a,b){ return b-a;}))
 }
 Sort();
 
@@ -23,14 +18,11 @@ Sort();
  
  let arr1=["Yanvar","Fevral","Mart","Aprel"];
 
- function WichMonth(arr1){
-    let newarr=[]
-    for (let i = 0; i < arr1.length; i++) {
-       newarr.push(arr1[i]+"-"+(i+1))
-    }
-    return newarr;
+ function WichMonth(arr){
+     console.log(arr.map((value,index)=>value=value+"-"+(index+1)));
  }
- console.log( WichMonth(arr1));
+
+WichMonth(arr1)
 
 /*
  4)String qebul eden bir function yaziriq. 
@@ -39,17 +31,9 @@ Sort();
  Meselen: Functiona gelen string - 
  "Salam olsun hamiya", hemin functionun qaytardiqi array ise - [5,5,6] olacaq.*/
 
- let string="Salam olsun hamiya";
+ let str="Salam olsun hamiya";
   
  function Count(word){
-     let arr=word.split(" ");
-     console.log(arr);
-
-     
-     for (let i = 0; i < arr.length; i++) {
-      arr[i]=(arr[i].length);  
-     }
-  
-     return arr;
+    console.log(word.split(" ").map(value=>value.length));  
  }
- console.log(Count(string));
+ Count(str);
